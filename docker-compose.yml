@@ -1,5 +1,12 @@
 version: "3.0"
 services:
+    # バックエンド
+    backend:
+        build: ./backend
+        volumes:
+            - ./backend/src:/go/src
+        tty: true
+        restart: always
     # MySQL
     db:
         image: mysql:5.7
@@ -10,3 +17,5 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: password
             TZ: 'Asia/Tokyo'
+        tty: true
+        restart: always
