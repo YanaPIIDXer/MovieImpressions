@@ -5,6 +5,7 @@ services:
         build: ./backend
         volumes:
             - ./backend/src:/go/src/server
+        command: realize start --name='server' --run
         ports:
             - 3000:3000
         tty: true
