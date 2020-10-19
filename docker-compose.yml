@@ -1,5 +1,15 @@
 version: "3.0"
 services:
+    # フロントエンド
+    frontend:
+        build: ./frontend
+        ports:
+            - 80:80
+        volumes:
+            - ./frontend/src:/app
+        tty: true
+        restart: always
+        
     # バックエンド
     backend:
         build: ./backend
@@ -10,6 +20,7 @@ services:
             - 3000:3000
         tty: true
         restart: always
+
     # MySQL
     db:
         image: mysql:5.7
