@@ -4,7 +4,9 @@ services:
     backend:
         build: ./backend
         volumes:
-            - ./backend/src:/go/src
+            - ./backend/src:/go/src/server
+        ports:
+            - 3000:3000
         tty: true
         restart: always
     # MySQL
