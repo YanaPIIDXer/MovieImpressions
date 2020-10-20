@@ -7,6 +7,7 @@ services:
             - 80:80
         volumes:
             - ./frontend/src:/app
+            - /app/node_modules
         tty: true
         restart: always
         
@@ -20,6 +21,8 @@ services:
             - 3000:3000
         tty: true
         restart: always
+        depends_on:
+            - db
 
     # MySQL
     db:
